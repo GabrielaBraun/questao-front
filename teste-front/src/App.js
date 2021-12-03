@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './App.css';
+require('dotenv').config();
 
 function App() {
 
   const [username, setUsername] = useState('');
-  const client_id = CLIENT_ID;
-  const client_secret = CLIENT_SECRET;
+  const client_id = process.env.CLIENT_ID;
+  const client_secret = process.env.CLIENT_SECRET;
 
   async function getUserGitHub(username){
     try{
